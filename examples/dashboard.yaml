@@ -1,0 +1,401 @@
+views:
+  - title: Overview
+    path: overview
+    icon: mdi:home
+    badges:
+      - type: entity
+        entity: weather.forecast_home
+    cards:
+      - type: markdown
+        content: >
+          ## Overview
+
+          _This section is intended to give you an overview over your cistern’s
+          current parameters_
+      - square: true
+        type: grid
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: gauge
+                entity: sensor.fill_level
+                name: Cistern Fill Level (%)
+                min: 0
+                max: 100
+                severity:
+                  green: 50
+                  yellow: 30
+                  red: 10
+              - type: glance
+                title: Level Info
+                entities:
+                  - entity: sensor.fill_height_m
+                  - entity: sensor.fill_level_l
+              - type: button
+                entity: sensor.filter_status
+                name: Filter Status
+                icon: mdi:air-filter
+                show_state: true
+                tap_action: none
+          - type: vertical-stack
+            cards:
+              - show_current: true
+                show_forecast: true
+                type: weather-forecast
+                entity: weather.forecast_home
+                name: Weather Info
+                forecast_type: daily
+              - type: entities
+                title: Precipitation Data
+                entities:
+                  - entity: sensor.expected_inflow_l
+                  - entity: sensor.expected_inflow_l
+                  - entity: sensor.historic_precip_l_m2
+        columns: 1
+      - type: grid
+        columns: 2
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: button
+                entity: sensor.extraction_pumps_active
+                name: Extraction Pumps Active
+                icon: mdi:water-pump
+                show_state: true
+                tap_action: none
+              - type: button
+                entity: sensor.refill_appliances_active
+                name: Refill Appliances Active
+                icon: mdi:waves-arrow-right
+                show_state: true
+                tap_action: none
+          - type: vertical-stack
+            cards:
+              - type: button
+                entity: sensor.drainage_appliances_active
+                name: Drainage Appliances Active
+                icon: mdi:waves-arrow-left
+                show_state: true
+                tap_action: none
+              - type: button
+                entity: sensor.filter_check_appliances_active
+                name: Filter Check Appliances Active
+                icon: mdi:air-filter
+                show_state: true
+                tap_action: none
+          - type: vertical-stack
+            cards:
+              - type: button
+                entity: sensor.irrigation_valves_active
+                name: Irrigation Valves Active
+                icon: mdi:valve
+                show_state: true
+                tap_action: none
+              - type: button
+                entity: sensor.time_ctrl_outlets_active
+                name: Time-Controlled Outlets Active
+                icon: mdi:clock-outline
+                show_state: true
+                tap_action: none
+      - type: entities
+        title: System State
+        entities:
+          - entity: sensor.error
+            name: System Status
+          - entity: sensor.operating_mode
+            name: Operating Mode
+      - type: horizontal-stack
+        cards:
+          - type: entities
+            title: Relay Controls
+            show_header_toggle: false
+            entities:
+              - entity: switch.relay_1
+                name: Relay 1
+              - entity: switch.relay_2
+                name: Relay 2
+              - entity: switch.relay_3
+                name: Relay 3
+              - entity: switch.relay_4
+                name: Relay 4
+              - entity: switch.relay_5
+                name: Relay 5
+              - entity: switch.relay_6
+                name: Relay 6
+              - entity: switch.relay_7
+                name: Relay 7
+              - entity: switch.relay_8
+                name: Relay 8
+  - title: Irrigation
+    path: irrigation
+    icon: mdi:sprinkler
+    badges: []
+    cards:
+      - type: markdown
+        content: >
+          ## Irrigation Settings
+
+          _All your irrigation settings are here. Visit docs.mycistern.com for
+          more info._
+      - square: true
+        type: grid
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: horizontal-stack
+                cards:
+                  - type: button
+                    entity: number.zone_1_manual_override
+                    name: Zone 1 Manual
+                    icon: mdi:water-pump
+                    show_state: true
+                    tap_action: none
+                  - type: entity
+                    entity: sensor.planned_zone_1_start
+                    name: Start Zone 1
+                  - type: entity
+                    entity: sensor.planned_zone_1_end
+                    name: End Zone 1
+              - type: entities
+                entities:
+                  - entity: number.zone_1_area_sqm
+                    name: Zone 1 Area (m²)
+                  - entity: number.zone_1_demand_l_m2
+                    name: Zone 1 Demand (L/m²)
+                  - entity: number.zone_1_optimization_active
+                    name: Zone 1 Optimization
+          - type: vertical-stack
+            cards:
+              - type: horizontal-stack
+                cards:
+                  - type: button
+                    entity: number.zone_2_manual_override
+                    name: Zone 2 Manual
+                    icon: mdi:water-pump
+                    show_state: true
+                    tap_action: none
+                  - type: entity
+                    entity: sensor.planned_zone_2_start
+                    name: Start Zone 2
+                  - type: entity
+                    entity: sensor.planned_zone_2_end
+                    name: End Zone 2
+              - type: entities
+                entities:
+                  - entity: number.zone_2_area_sqm
+                    name: Zone 2 Area (m²)
+                  - entity: number.zone_2_demand_l_m2
+                    name: Zone 2 Demand (L/m²)
+                  - entity: number.zone_2_optimization_active
+                    name: Zone 2 Optimization
+          - type: vertical-stack
+            cards:
+              - type: horizontal-stack
+                cards:
+                  - type: button
+                    entity: number.zone_3_manual_override
+                    name: Zone 3 Manual
+                    icon: mdi:water-pump
+                    show_state: true
+                    tap_action: none
+                  - type: entity
+                    entity: sensor.planned_zone_3_start
+                    name: Start Zone 3
+                  - type: entity
+                    entity: sensor.planned_zone_3_end
+                    name: End Zone 3
+              - type: entities
+                entities:
+                  - entity: number.zone_3_area_sqm
+                    name: Zone 3 Area (m²)
+                  - entity: number.zone_3_demand_l_m2
+                    name: Zone 3 Demand (L/m²)
+                  - entity: number.zone_3_optimization_active
+                    name: Zone 3 Optimization
+          - type: vertical-stack
+            cards:
+              - type: horizontal-stack
+                cards:
+                  - type: button
+                    entity: number.zone_4_manual_override
+                    name: Zone 4 Manual
+                    icon: mdi:water-pump
+                    show_state: true
+                    tap_action: none
+                  - type: entity
+                    entity: sensor.planned_zone_4_start
+                    name: Start Zone 4
+                  - type: entity
+                    entity: sensor.planned_zone_4_end
+                    name: End Zone 4
+              - type: entities
+                entities:
+                  - entity: number.zone_4_area_sqm
+                    name: Zone 4 Area (m²)
+                  - entity: number.zone_4_demand_l_m2
+                    name: Zone 4 Demand (L/m²)
+                  - entity: number.zone_4_optimization_active
+                    name: Zone 4 Optimization
+          - type: vertical-stack
+            cards:
+              - type: horizontal-stack
+                cards:
+                  - type: button
+                    entity: number.zone_5_manual_override
+                    name: Zone 5 Manual
+                    icon: mdi:water-pump
+                    show_state: true
+                    tap_action: none
+                  - type: entity
+                    entity: sensor.planned_zone_5_start
+                    name: Start Zone 5
+                  - type: entity
+                    entity: sensor.planned_zone_5_end
+                    name: End Zone 5
+              - type: entities
+                entities:
+                  - entity: number.zone_5_area_sqm
+                    name: Zone 5 Area (m²)
+                  - entity: number.zone_5_demand_l_m2
+                    name: Zone 5 Demand (L/m²)
+                  - entity: number.zone_5_optimization_active
+                    name: Zone 5 Optimization
+          - type: vertical-stack
+            cards:
+              - type: horizontal-stack
+                cards:
+                  - type: button
+                    entity: number.zone_6_manual_override
+                    name: Zone 6 Manual
+                    icon: mdi:water-pump
+                    show_state: true
+                    tap_action: none
+                  - type: entity
+                    entity: sensor.planned_zone_6_start
+                    name: Start Zone 6
+                  - type: entity
+                    entity: sensor.planned_zone_6_end
+                    name: End Zone 6
+              - type: entities
+                entities:
+                  - entity: number.zone_6_area_sqm
+                    name: Zone 6 Area (m²)
+                  - entity: number.zone_6_demand_l_m2
+                    name: Zone 6 Demand (L/m²)
+                  - entity: number.zone_6_optimization_active
+                    name: Zone 6 Optimization
+          - type: vertical-stack
+            cards:
+              - type: horizontal-stack
+                cards:
+                  - type: button
+                    entity: number.zone_7_manual_override
+                    name: Zone 7 Manual
+                    icon: mdi:water-pump
+                    show_state: true
+                    tap_action: none
+                  - type: entity
+                    entity: sensor.planned_zone_7_start
+                    name: Start Zone 7
+                  - type: entity
+                    entity: sensor.planned_zone_7_end
+                    name: End Zone 7
+              - type: entities
+                entities:
+                  - entity: number.zone_7_area_sqm
+                    name: Zone 7 Area (m²)
+                  - entity: number.zone_7_demand_l_m2
+                    name: Zone 7 Demand (L/m²)
+                  - entity: number.zone_7_optimization_active
+                    name: Zone 7 Optimization
+          - type: vertical-stack
+            cards:
+              - type: horizontal-stack
+                cards:
+                  - type: button
+                    entity: number.zone_8_manual_override
+                    name: Zone 8 Manual
+                    icon: mdi:water-pump
+                    show_state: true
+                    tap_action: none
+                  - type: entity
+                    entity: sensor.planned_zone_8_start
+                    name: Start Zone 8
+                  - type: entity
+                    entity: sensor.planned_zone_8_end
+                    name: End Zone 8
+              - type: entities
+                entities:
+                  - entity: number.zone_8_area_sqm
+                    name: Zone 8 Area (m²)
+                  - entity: number.zone_8_demand_l_m2
+                    name: Zone 8 Demand (L/m²)
+                  - entity: number.zone_8_optimization_active
+                    name: Zone 8 Optimization
+        columns: 1
+  - title: Settings
+    path: settings
+    icon: mdi:cog
+    badges: []
+    cards:
+      - type: markdown
+        content: |
+          ## Settings
+          _Here you can configure your myCistern WaterGuard device_
+      - square: true
+        type: grid
+        cards:
+          - type: entities
+            title: Outlet Configuration
+            entities:
+              - entity: number.outlet_1_configuration
+              - entity: number.outlet_2_configuration
+              - entity: number.outlet_3_configuration
+              - entity: number.outlet_4_configuration
+              - entity: number.outlet_5_configuration
+              - entity: number.outlet_6_configuration
+              - entity: number.outlet_7_configuration
+              - entity: number.outlet_8_configuration
+          - type: entities
+            title: System Settings
+            entities:
+              - entity: number.collection_surface_sqm
+              - entity: switch.filter_sensor
+              - entity: switch.flow_sensor
+              - entity: switch.time_ctrl_outlets
+              - entity: switch.flow_manual
+              - entity: switch.level_sensor
+              - entity: number.lower_level_controller_threshold
+              - entity: switch.manual_tank_def
+              - entity: number.flow_sensor_max_volume
+              - entity: number.max_manual_irrigation_duration_min
+              - entity: number.max_refill_duration_min
+              - entity: number.number_of_tanks
+              - entity: number.irrigation_optimization_level
+              - entity: switch.split_irrigation
+              - entity: time.irrigation_start_time_1
+              - entity: time.irrigation_start_time_2
+              - entity: number.tank_measure_a_m
+              - entity: number.tank_measure_b_m
+              - entity: number.tank_measure_c_m
+              - entity: number.tank_pre_defined_model
+              - entity: switch.time_ctrl_outlets
+              - entity: number.upper_level_controller_threshold
+              - entity: number.warning_threshold
+            show_header_toggle: false
+          - type: entities
+            title: System Info
+            entities:
+              - entity: sensor.device_name
+                name: Device Name
+              - entity: sensor.ip_address
+                name: Device IP
+              - entity: sensor.mac_address
+                name: Device MAC
+              - entity: sensor.ssid
+                name: Connected Network
+              - entity: sensor.error
+                name: Last Update
+              - entity: sensor.serial_number
+                name: Serial Number
+        columns: 1

@@ -1,0 +1,12 @@
+{
+  "domain": "cistern",
+  "name": "ESP32 Cistern",
+  "version": "1.0.1",
+  "requirements": [],
+  "dependencies": [],
+  "config_flow": true,
+  "iot_class": "local_polling",
+  "zeroconf": [
+    { "type": "_cistern._tcp.local." }
+  ]
+}

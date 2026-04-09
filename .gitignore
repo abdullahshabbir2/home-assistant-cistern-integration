@@ -1,0 +1,20 @@
+# Python / Home Assistant
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Build artifacts and exports
+*.zip
+*.docx
+
+# Local firmware secrets
+sketch_apr19a/secrets.h
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+

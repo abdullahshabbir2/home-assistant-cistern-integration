@@ -1,0 +1,3 @@
+DOMAIN = "cistern"
+DEFAULT_PORT = 80
+UPDATE_INTERVAL = 30  # seconds
