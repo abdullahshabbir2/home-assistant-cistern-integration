@@ -1,4 +1,4 @@
-# Home Assistant Cistern Controller
+# Cistern Controller Home Assistant Integration
 
 [![Home Assistant Custom Integration](https://img.shields.io/badge/Home%20Assistant-Custom%20Integration-41BDF5?logo=homeassistant&logoColor=white)](https://www.home-assistant.io/)
 ![ESP32 Firmware](https://img.shields.io/badge/ESP32-Firmware-E7352C)
@@ -6,7 +6,7 @@
 ![Arduino](https://img.shields.io/badge/Arduino-Framework-00979D?logo=arduino&logoColor=white)
 ![REST API](https://img.shields.io/badge/API-REST-0A7EA4)
 
-An end-to-end IoT portfolio project that combines a custom Home Assistant integration with ESP32 firmware for local cistern monitoring, irrigation scheduling, and device control over a REST API.
+An end-to-end IoT portfolio project centered on a custom Home Assistant integration for a cistern controller, paired with ESP32 firmware for local monitoring, irrigation scheduling, and device control over a REST API.
 
 This repository is strong portfolio material because it shows work across embedded systems, backend integration, local networking, and home automation UX in one project.
 
@@ -20,7 +20,7 @@ This repository is strong portfolio material because it shows work across embedd
 
 ## What It Does
 
-The project is built around a custom `cistern` integration for Home Assistant. The integration connects to an ESP32 controller over the local network, reads telemetry from `/status`, and sends configuration changes to `/command`.
+The project is built around a custom `cistern` integration for Home Assistant. The integration connects Home Assistant to a cistern controller over the local network, reads telemetry from `/status`, and sends configuration changes to `/command`.
 
 The current ESP32 sketch is useful as a development and demo controller because it generates representative telemetry and accepts control updates. That makes the project easy to showcase without requiring a fully wired physical installation during review.
 
