@@ -1,8 +1,16 @@
 # Home Assistant Cistern Controller
 
-A portfolio project that combines a custom Home Assistant integration with an ESP32-based device API for local cistern monitoring and irrigation control.
+[![Home Assistant Custom Integration](https://img.shields.io/badge/Home%20Assistant-Custom%20Integration-41BDF5?logo=homeassistant&logoColor=white)](https://www.home-assistant.io/)
+![ESP32 Firmware](https://img.shields.io/badge/ESP32-Firmware-E7352C)
+![Python Backend](https://img.shields.io/badge/Python-Backend-3776AB?logo=python&logoColor=white)
+![Arduino](https://img.shields.io/badge/Arduino-Framework-00979D?logo=arduino&logoColor=white)
+![REST API](https://img.shields.io/badge/API-REST-0A7EA4)
 
-The repository demonstrates:
+An end-to-end IoT portfolio project that combines a custom Home Assistant integration with ESP32 firmware for local cistern monitoring, irrigation scheduling, and device control over a REST API.
+
+This repository is strong portfolio material because it shows work across embedded systems, backend integration, local networking, and home automation UX in one project.
+
+## Portfolio Highlights
 
 - Custom Home Assistant integration design
 - ESP32 firmware exposing a local REST API
@@ -15,6 +23,14 @@ The repository demonstrates:
 The project is built around a custom `cistern` integration for Home Assistant. The integration connects to an ESP32 controller over the local network, reads telemetry from `/status`, and sends configuration changes to `/command`.
 
 The current ESP32 sketch is useful as a development and demo controller because it generates representative telemetry and accepts control updates. That makes the project easy to showcase without requiring a fully wired physical installation during review.
+
+## Why It Stands Out
+
+- Demonstrates both firmware and software integration work
+- Uses a clean client-device model with `/status` and `/command` endpoints
+- Exposes real user controls through Home Assistant entities
+- Includes an example dashboard for the frontend layer
+- Is structured so it can be reviewed quickly by recruiters or clients
 
 ## Tech Stack
 
@@ -61,19 +77,14 @@ assets/screenshots/          README images and demo screenshots
 
 ## Screenshots
 
-Yes, you should upload pictures.
+The current repository includes dashboard screenshots that show the main monitoring and control surfaces exposed through Home Assistant.
 
-For a professional GitHub repo, add:
+![Main dashboard](assets/screenshots/main_dashboard.jpeg)
+![Relay control](assets/screenshots/updated_relaycontrol.jpeg)
+![Irrigation dashboard](assets/screenshots/irrigation_dashboard.jpeg)
+![Settings view](assets/screenshots/settings.jpeg)
 
-- Dashboard screenshots
-- Photos of the ESP32 hardware or prototype
-- A short GIF showing the Home Assistant controls updating live
-
-Store them in `assets/screenshots/` and reference them in this README, for example:
-
-```md
-![Dashboard overview](assets/screenshots/dashboard-overview.png)
-```
+For an even stronger GitHub presentation, add a hardware photo and a short demo GIF later.
 
 ## Validation
 
@@ -83,3 +94,4 @@ This repository includes a lightweight GitHub Actions workflow that checks the P
 
 - The root-level archives and notebook files are excluded from version control to keep the repository focused on source code and showcase material.
 - A license can be added before publishing, but that choice should match how you want others to use your work.
+- Before pushing publicly, review the screenshots once to make sure they do not expose any personal names, IP addresses, or other private details.
